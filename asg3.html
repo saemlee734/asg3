@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Zombie Run: Save the Bunny from the Runes!</title>
+    <style>
+      body {
+        font-family: 'Arial', sans-serif;
+        background-color: #1c1c2b;
+        color: #f0e6ff;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        line-height: 1.6;
+      }
+
+      .banner {
+        background: linear-gradient(to right, #462255, #6e397e);
+        color: #fdf5ff;
+        text-align: center;
+        padding: 30px 20px;
+        border-radius: 10px;
+        margin-bottom: 25px;
+        font-size: 28px;
+        font-weight: bold;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      }
+
+      .segment {
+        display: flex;
+        justify-content: center;
+        margin: 20px 0;
+      }
+
+      #webgl {
+        background-color: #2b2c3a;
+        border: 3px solid #8a56ac;
+        border-radius: 8px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      }
+
+      h3 {
+        color: #d8b4ff;
+      }
+
+      .info-panel {
+        background-color: #2d2c3d;
+        padding: 15px;
+        border-radius: 8px;
+        margin: 15px 0;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      }
+
+      .controls {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin: 15px 0;
+      }
+
+      .control-group {
+        background-color: #2d2c3d;
+        padding: 15px;
+        border-radius: 8px;
+        flex: 1;
+        min-width: 250px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      }
+
+      button {
+        background-color: #8a56ac;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+      }
+
+      button:hover {
+        background-color: #a378d4;
+      }
+
+      .author {
+        font-style: italic;
+        color: #ccc;
+        margin-top: 10px;
+      }
+
+      .notes-to-grader {
+        background-color: #3a2f45;
+        border: 2px dashed #c9a8ff;
+        padding: 15px;
+        border-radius: 8px;
+        margin-top: 40px;
+        font-size: 15px;
+        color: #f0e6ff;
+      }
+
+      .notes-to-grader h3 {
+        margin-top: 0;
+        color: #d8b4ff;
+      }
+    </style>
+  </head>
+
+  <body onload="main()">
+    <div class="banner">Zombie Run: Save the Bunny from the Runes!</div>
+
+    <div class="info-panel">
+      <strong>Sabrina Lee</strong> | saemlee@ucsc.edu
+      <div class="author">
+        Build a shelter for the lost bunny before the zombie catches it in the cursed runes. 
+        Each block you place brings the zombie one step closer. Every run is different!
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="control-group">
+        <h3>Game Controls</h3>
+        <ul>
+          <li><strong>Left click</strong> - Place blocks (build the bunny's home)</li>
+          <li><strong>Right click</strong> - Remove blocks</li>
+          <li><strong>WASD/Arrow keys</strong> - Move around</li>
+          <li><strong>Q/E</strong> - Look left/right</li>
+          <li><strong>Click canvas</strong> - Enable mouse look</li>
+        </ul>
+      </div>
+
+      <div class="control-group">
+        <h3>World Features</h3>
+        <ul>
+          <li>Turns sunset at 4 blocks placed</li>
+          <li>Turns night at 8 blocks placed</li>
+          <li>Reset World if the task isn't achieved</li>
+          <li>Each block placed causes the zombie to move one step closer to the bunny</li>
+          <li>Structures and world elements are randomly generated for unique playthroughs</li>
+        </ul>
+        <button id="resetButton">Reset World</button>
+      </div>
+    </div>
+
+    <div class="segment">
+      <canvas id="webgl" width="800" height="600">
+        Please use a browser that supports "canvas"
+      </canvas>
+    </div>
+
+    <div class="info-panel">
+      <div id="performance-display"></div>
+      <div id="camera-position"></div>
+      <div id="lookat-position"></div>
+    </div>
+
+    <div class="notes-to-grader">
+      <h3>Notes to Grader</h3>
+      <ul>
+        <li>The game is about <strong>building a shelter for a bunny</strong> before a zombie reaches it.</li>
+        <li><strong>Every block placed</strong> causes the zombie to move one step closer.</li>
+        <li><strong>Buildings and terrain are randomly generated</strong> so each playthrough is unique.</li>
+        <li>ChatGPT and Deepseek were used for help.</li>
+      </ul>
+    </div>
+
+    <script src="../lib/webgl-utils.js"></script>
+    <script src="../lib/webgl-debug.js"></script>
+    <script src="../lib/cuon-utils.js"></script>
+    <script src="../lib/cuon-matrix-cse160.js"></script>
+    <script src="../lib/triangle.js"></script>
+    <script src="../lib/circle.js"></script>
+    <script src="../lib/cube.js"></script>
+    <script src="../lib/pyramid.js"></script>
+    <script src="camera.js"></script>
+    <script src="world.js"></script>
+    <script src="asg3.js"></script>
+
+    <script>
+      document.getElementById('resetButton').addEventListener('click', function() {
+        if (confirm('Are you sure you want to reset the world? All your blocks will be removed.')) {
+          location.reload();
+        }
+      });
+    </script>
+  </body>
+</html>
