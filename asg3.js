@@ -256,7 +256,7 @@ function initTextures() {
   }
 
   image0.onload = function() { loadTexture0(image0); };
-  image0.src = './../images/sky.jpg';
+  image0.src = 'sky.jpg';
 
   let image1 = new Image();
   if(!image1) {
@@ -265,7 +265,7 @@ function initTextures() {
   }
 
   image1.onload = function() { loadTexture1(image1); };
-  image1.src = './../images/dirt.jpg';
+  image1.src = 'dirt.jpg';
 
   let image2 = new Image();
   if(!image2) {
@@ -273,7 +273,7 @@ function initTextures() {
   }
 
   image2.onload = function() { loadTexture2(image2); };
-  image2.src = './../images/grass_side.jpg';
+  image2.src = 'grass_side.jpg';
 
   let image3 = new Image();
   if(!image3) {
@@ -281,7 +281,7 @@ function initTextures() {
   }
 
   image3.onload = function() { loadTexture3(image3); };
-  image3.src = './../images/grass_top.jpg';
+  image3.src = 'grass_top.jpg';
 
   let image4 = new Image();
   if(!image4) {
@@ -289,7 +289,7 @@ function initTextures() {
   }
 
   image4.onload = function() { loadTexture4(image4); };
-  image4.src = './../images/stone.jpg';
+  image4.src = 'stone.jpg';
 
   // Load sunset texture
   let image5 = new Image();
@@ -298,7 +298,7 @@ function initTextures() {
   }
 
   image5.onload = function() { loadTexture5(image5); };
-  image5.src = './../images/sunset.jpg';
+  image5.src = 'sunset.jpg';
 
   // Load night texture
   let image6 = new Image();
@@ -307,7 +307,7 @@ function initTextures() {
   }
 
   image6.onload = function() { loadTexture6(image6); };
-  image6.src = './../images/night.jpg';
+  image6.src = 'night.jpg';
 
   return true;
 }
