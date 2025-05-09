@@ -24,6 +24,7 @@ A WebGL-based 3D survival mini-game where the player must quickly build a shelte
 1. Clone or download the project files.
 2. Open `asg3.html` in a WebGL-compatible browser (latest Chrome or Firefox recommended).
 3. Start building and protect the bunny!
+4. https://saemlee734.github.io/asg3/asg3.html
 
 ## 👩‍💻 Notes to Grader
 - Zombie moves closer every time a block is placed.
