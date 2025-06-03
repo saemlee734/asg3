@@ -29,6 +29,7 @@ A WebGL-based 3D survival mini-game where the player must quickly build a shelte
 ## 👩‍💻 Notes to Grader
 - Zombie moves closer every time a block is placed.
 - Terrain and structures are randomly generated for each session to ensure variety.
+- Used Chatgpt and Deepseek
 
 ## 📝 Acknowledgments
 Textures and matrix utilities are adapted from UCSC CSE160 starter code and royalty-free texture libraries.
